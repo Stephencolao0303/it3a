@@ -104,3 +104,4 @@ INSERT INTO borrow (student_id,book_id) VALUES
 (1,2),
 (2,1),
 (3,3);
+--committed
