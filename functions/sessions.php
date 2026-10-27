@@ -31,10 +31,10 @@ function startUserSession($pdo){
 function endUserSession($pdo){
     if(!isset($_SESSION['session_id'])){
         return false;
-    }
- 
+     }
+
     $session_id = $_SESSION['session_id'];
- 
+
     $stmt = $pdo->prepare("
         UPDATE user_sessions
         SET 
@@ -45,8 +45,9 @@ function endUserSession($pdo){
                 NOW()
             )
         WHERE session_id = :session_id
+          AND session_end IS NULL
     ");
- 
+
     return $stmt->execute([
         'session_id' => $session_id
     ]);
