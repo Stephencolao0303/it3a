@@ -840,7 +840,7 @@ requireRole('manager');
 
         <?php endif;?>
 
-        
+       <a href="<?php echo BASE_URL; ?>/auth/signout.php">Sign Out</a>
     </body>
 
     <?php if (isset($_SESSION['alert'])): ?>
